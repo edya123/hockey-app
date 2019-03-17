@@ -1,0 +1,20 @@
+<h1>Komandas</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nosaukums</th>
+            <th>Komandas apzīmējums</th>
+        </tr>
+    </thead>
+<tbody>
+    <% @teams.each do |team| %>
+        <tr>
+            <td><%= team.title %></td>
+            <td><%= team.code %></td>
+        </tr>
+    <% end %>
+</tbody>
+</table>
+
+<%= link_to 'Jauna komanda', new_team_path %>

@@ -1,0 +1,13 @@
+<%= form_with(model: team, local: true) do |form| %>
+
+    <%= form_for(model: team) do |form| %>
+        <div>
+        <%= form.label :title "Komandas nosaukums" %>
+        <%= form.text_field :title %>
+        </div>
+    
+        <div>
+        <%= form.label :"Komandas kods" %>
+        <%= form.text_field :title %>
+        </div>
+    
