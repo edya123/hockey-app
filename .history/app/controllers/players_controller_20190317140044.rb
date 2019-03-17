@@ -1,10 +1,10 @@
-class TeamsController < ApplicationController
+class PlayersController < ApplicationController
     def index
-        @teams = Team.all
+        @players = Players.all
     end
 
     def show
-        @team = Team.find(params[:id])
+        @players = Play.find(params[:id])
     end
 
     def new

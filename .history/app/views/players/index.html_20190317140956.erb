@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Spēlētāji</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Vārds</th>
+            <th>Numurs</th>
+            <th>Pozīcija</th>
+            <th>Klubs</th>
+            <th>Numurs</th>
+        </tr>
+    </thead>
+<tbody>
+    <% @teams.each do |team| %>
+        <tr>
+            <td><%= team.title %></td>
+            <td><%= team.code %></td>
+            <td><%= link_to "Labot", edit_team_path(team) %>
+            <td><%= link_to "Dzēst", team_path(team), method: :delete, data: { confirm: "Vai esat drošs?"} %>
+        </tr>
+    <% end %>
+</tbody>
+</table>
+
+<%= link_to 'Jauna komanda', new_team_path %>

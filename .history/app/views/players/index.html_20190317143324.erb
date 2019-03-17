@@ -13,11 +13,12 @@
         </tr>
     </thead>
 <tbody>
-    <% @player.each do |player| %>
+    <% @players.each do |player| %>
         <tr>
             <td><%= player.name %></td>
             <td><%= player.number %></td>
             <td><%= player.position %></td>
+            <td><%= player.club %></td>
             <td><%= player.team %></td>
             <td><%= link_to "Labot", edit_player_path(player) %>
             <td><%= link_to "Dzēst", player_path(player), method: :delete, data: { confirm: "Vai esat drošs?"} %>
@@ -26,4 +27,4 @@
 </tbody>
 </table>
 
-<%= link_to 'Jauns spēlētājs', new_player_path %>
+<%= link_to 'jauns spēlētājs', new_player_path %>

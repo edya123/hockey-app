@@ -1,0 +1,22 @@
+<%= form_with(model: team, local: true) do |form| %>
+        <% if team.errors.any? %>
+        <div id="error_explanation">
+        <h2>Kļūdas saglabājot:<h2/>
+
+        <ul>
+        <% team.errors.full_messages.each do |message| %>
+           <li><%= message %>
+        <% end %>
+        </ul>
+        </div>
+           <%= form_for(model: team) do |form| %>
+        <div>
+        <%= form.label :title "Komandas nosaukums" %>
+        <%= form.text_field :title %>
+        </div>
+    
+        <div>
+        <%= form.label :"Komandas kods" %>
+        <%= form.text_field :title %>
+        </div>
+    

@@ -12,17 +12,15 @@
         <% end %>
 
         <div class="field">
-           <%= form.label :title, "Komandas nosaukums" %>
-           <%= form.text_field :title %>
+        
+           <%= form_for(model: team) do |form| %>
+        <div>
+        <%= form.label :title "Komandas nosaukums" %>
+        <%= form.text_field :title %>
         </div>
     
-        <div class="field">
-           <%= form.label :code, "Komandas saīsinājums" %>
-           <%= form.text_field :code %>
+        <div>
+        <%= form.label :"Komandas kods" %>
+        <%= form.text_field :title %>
         </div>
-
-           <div class="actions">
-              <%= form.submit 'Saglabāt' %>
-           </div>
-        <% end %>
     

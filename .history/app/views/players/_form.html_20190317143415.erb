@@ -1,0 +1,42 @@
+<%= form_with(model: player, local: true) do |form| %>
+    <% if player.errors.any? %>
+    <div id="error_explanation">
+    <h2>Kļūdas saglabājot:<h2/>
+
+    <ul>
+    <% player.errors.full_messages.each do |message| %>
+       <li><%= message %>
+    <% end %>
+    </ul>
+    </div>
+    <% end %>
+
+    <div class="field">
+       <%= form.label :title, "Vārds" %>
+       <%= form.text_field :name %>
+    </div>
+
+    <div class="field">
+       <%= form.label :code, "Numurs" %>
+       <%= form.text_field :number %>
+    </div>
+
+    <div class="field">
+        <%= form.label :code, "Pozīcija" %>
+        <%= form.text_field :position %>
+    </div>
+
+    <div class="field">
+        <%= form.label :code, "Klubs" %>
+        <%= form.text_field :club %>
+    </div>
+
+    <div class="field">
+        <%= form.label :code, "Komanda" %>
+        <%= form.text_field :team %>
+    </div>
+
+       <div class="actions">
+          <%= form.submit 'Saglabāt' %>
+       </div>
+    <% end %>

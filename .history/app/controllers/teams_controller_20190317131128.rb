@@ -3,20 +3,12 @@ class TeamsController < ApplicationController
         @teams = Team.all
     end
 
-    def show
-        @team = Team.find(params[:id])
-    end
-
     def new
-            @team = Team.new
-    end
-
-    def edit
-        @team = Team.find(params[:id])
+            @team = Team.find(params[:id])new
     end
 
     def create
-        @team = Team.new(team_params)
+        @team = Team.new(params[:team])
 
         if @team.save
             redirect_to action: :index
@@ -25,23 +17,23 @@ class TeamsController < ApplicationController
         end
     end
     
-    
+    def edit
+        @team = Team.find(params[:id])
+    end
 
     def update
         @team = Team.find(params[:id])
         
-        if @team.update(team_params)
+        if @team.update
             redirect_to action: :index
         else
-            render :edit
+            render :new
         end
     end
 
     def destroy
         @team = Team.find(params[:id])
         @team.destroy
-
-        redirect_to action: :index
     end
 
     private

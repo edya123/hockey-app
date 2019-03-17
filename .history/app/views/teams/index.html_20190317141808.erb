@@ -17,13 +17,12 @@
         <tr>
             <td><%= player.name %></td>
             <td><%= player.number %></td>
-            <td><%= player.position %></td>
-            <td><%= player.team %></td>
-            <td><%= link_to "Labot", edit_player_path(player) %>
-            <td><%= link_to "Dzēst", player_path(player), method: :delete, data: { confirm: "Vai esat drošs?"} %>
+            <td><%= player.
+            <td><%= link_to "Labot", edit_team_path(team) %>
+            <td><%= link_to "Dzēst", team_path(team), method: :delete, data: { confirm: "Vai esat drošs?"} %>
         </tr>
     <% end %>
 </tbody>
 </table>
 
-<%= link_to 'Jauns spēlētājs', new_player_path %>
+<%= link_to 'Jauns spēlētājs', new_team_path %>
