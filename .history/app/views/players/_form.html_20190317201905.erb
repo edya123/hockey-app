@@ -1,7 +1,7 @@
 <%= form_with(model: player, local: true) do |form| %>
     <% if player.errors.any? %>
     <div id="error_explanation">
-    <h2>Kļūdas saglabājot:</h2>
+    <h2>Kļūdas saglabājot:<h2/>
 
     <ul>
     <% player.errors.full_messages.each do |message| %>
@@ -33,7 +33,7 @@
 
     <div class="field">
         <%= form.label :code, "Komanda" %>
-        <%= form.collection_select :team_id, Team.all, :id,  %>
+        <%= form.collection_select :team_id %>
     </div>
 
        <div class="actions">
